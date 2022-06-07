@@ -17,6 +17,7 @@ import org.springframework.core.annotation.Order;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.hamcrest.Matchers.*;
 
@@ -177,5 +178,76 @@ public class StoresCRUDTest extends TestBase {
         ValidatableResponse response = storesSteps.getAllStores();
         int serviceID = response.extract().path("data[6].services[3].storeservices.serviceId");
         Assert.assertEquals(4, serviceID);
+    }
+
+    @Title("Extracting some data from Response")
+    @Test
+    @Order(15)
+    public void test015(){
+        ValidatableResponse response = storesSteps.getAllStores();
+
+        System.out.println("---------------------------- Response ---------------------------------");
+        int limit = response.extract().path("limit");
+        System.out.println("1. Limits                           :" + limit);
+
+        int total = response.extract().path("total");
+        System.out.println("2. Total                            :" + total);
+
+        String nameOfFifthStore = response.extract().path("data[4].name");
+        System.out.println("3. Name of Fifth Store              :" + nameOfFifthStore);
+
+        List<String> nameOfAllStores = response.extract().path("data.name");
+        System.out.println("4. Name of All Stores               :" + nameOfAllStores);
+
+        List<?> storeIds = response.extract().path("data.services");
+        System.out.println("5. Name of All Stores IDs           :" + storeIds);
+
+        List<?> data = response.extract().path("data");
+        System.out.println("6. Data size                        :" + data.size());
+
+        List<?> valuesOfStCloud = response.extract().path("data.findAll{it.name=='St Cloud'}");
+        System.out.println("7. All values of St. Cloud          :" + valuesOfStCloud);
+
+        List<?> addressOfRoseville = response.extract().path("data.findAll{it.name=='Rochester'}.address");
+        System.out.println("8. Address of Rochester             :" + addressOfRoseville);
+
+        List<?> allServicesOfEightStore = response.extract().path("data.findAll{it.id==8}.services");
+        System.out.println("9. Services of 8th Store            :" + allServicesOfEightStore);
+
+        List<?> storeServiceWindows = response.extract().path("data.find{it.services}.services.findAll{it.name=='Windows Store'}.storeservices");
+        System.out.println("10. StoreServices of Windows Store  :" + storeServiceWindows);
+
+        List<?> storeId = response.extract().path("data.services.storeservices.storeId");
+        System.out.println("11. StoreID of All Store            :" + storeId);
+
+        List<?> id = response.extract().path("data.services.id");
+        System.out.println("12. ID of All Store                 :" + id);
+
+        List<?> namesND = response.extract().path("data.findAll{it.state=='ND'}.name");
+        System.out.println("13. Store name of State ND          :" + namesND);
+
+        List<?> servicesOfRochester = response.extract().path("data.findAll{it.name=='Rochester'}.services.find{it.id}");
+        System.out.println("14. Nr. of Services                 :" + servicesOfRochester.size());
+
+        List<?> createdAt = response.extract().path("data.find{it.services}.services.findAll{it.name='Windows Store'}.storeservices.createdAt");
+        System.out.println("15. Created At of Windows Store     :" + createdAt);
+
+        List<?> fargoStore = response.extract().path("data.findAll{it.name=='Fargo'}.services.find{it.names}");
+        System.out.println("16. All Services of Fargo Store     :" + fargoStore);
+
+        List<?> zipcode = response.extract().path("data.zip");
+        System.out.println("17. Zip of all Store                :" + zipcode);
+
+        List<?> zipCodeRoseville = response.extract().path("data.findAll{it.name=='Roseville'}.zip");
+        System.out.println("18. All Services of Fargo Store     :" + zipCodeRoseville);
+
+        List<Map<?,?>> storeServiceMagnolia = response.extract().path("data.findAll{it.services.findAll{it.name=='Magnolia Home Theater'}}.services.storeservices");
+        System.out.println("19. All Services of Magnolia Store  :" + storeServiceMagnolia);
+
+        List<?> lat = response.extract().path("data.lat");
+        System.out.println("20. lat of all stores               :" + lat);
+
+        System.out.println("------------------------ End of Response ------------------------------");
+
     }
 }

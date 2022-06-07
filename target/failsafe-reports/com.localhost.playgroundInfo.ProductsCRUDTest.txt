@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.localhost.playgroundInfo.ProductsCRUDTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.202 sec - in com.localhost.playgroundInfo.ProductsCRUDTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.239 sec - in com.localhost.playgroundInfo.ProductsCRUDTest
