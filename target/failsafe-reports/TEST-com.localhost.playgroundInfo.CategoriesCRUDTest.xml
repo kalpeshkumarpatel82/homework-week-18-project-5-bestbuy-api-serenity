@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.localhost.playgroundInfo.CategoriesCRUDTest" time="3.587" tests="4" errors="1" skipped="0" failures="0">
+<testsuite name="com.localhost.playgroundInfo.CategoriesCRUDTest" time="3.551" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2021.3.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -63,110 +63,8 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="test001" classname="com.localhost.playgroundInfo.CategoriesCRUDTest" time="3.381"/>
-  <testcase name="test002" classname="com.localhost.playgroundInfo.CategoriesCRUDTest" time="0.037"/>
-  <testcase name="test003" classname="com.localhost.playgroundInfo.CategoriesCRUDTest" time="0.063"/>
-  <testcase name="test004" classname="com.localhost.playgroundInfo.CategoriesCRUDTest" time="0.106">
-    <error message="Path parameters were not correctly defined. Redundant path parameters are: productID=abcat001000149802. Undefined path parameters are: categoryID." type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: Path parameters were not correctly defined. Redundant path parameters are: productID=abcat001000149802. Undefined path parameters are: categoryID.
-	at io.restassured.internal.RequestSpecificationImpl.assertCorrectNumberOfPathParams(RequestSpecificationImpl.groovy:1336)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1213)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
-	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
-	at io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1223)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1213)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
-	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
-	at io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)
-	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
-	at io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)
-	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
-	at io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)
-	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
-	at io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)
-	at net.serenitybdd.rest.filters.FieldsRecordingFilter.filter(FieldsRecordingFilter.java:40)
-	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
-	at io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)
-	at net.serenitybdd.rest.filters.FieldsRecordingFilter.filter(FieldsRecordingFilter.java:40)
-	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
-	at io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)
-	at net.serenitybdd.rest.filters.FieldsRecordingFilter.filter(FieldsRecordingFilter.java:40)
-	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
-	at io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)
-	at net.serenitybdd.rest.filters.FieldsRecordingFilter.filter(FieldsRecordingFilter.java:40)
-	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
-	at io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)
-	at net.serenitybdd.rest.filters.FieldsRecordingFilter.filter(FieldsRecordingFilter.java:40)
-	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
-	at io.restassured.filter.log.RequestLoggingFilter.filter(RequestLoggingFilter.java:124)
-	at net.serenitybdd.rest.filters.FieldsRecordingFilter.filter(FieldsRecordingFilter.java:40)
-	at io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)
-	at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1722)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1213)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
-	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
-	at io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1728)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1213)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)
-	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:810)
-	at io.restassured.internal.RequestSpecificationImpl.invokeMethod(RequestSpecificationImpl.groovy)
-	at io.restassured.internal.RequestSpecificationImpl.get(RequestSpecificationImpl.groovy:168)
-	at net.serenitybdd.rest.decorators.request.RequestSpecificationDecorated.execute(RequestSpecificationDecorated.java:227)
-	at net.serenitybdd.rest.decorators.request.RequestSpecificationDecorated.get(RequestSpecificationDecorated.java:48)
-	at net.serenitybdd.rest.decorators.request.RequestSpecificationDecorated.get(RequestSpecificationDecorated.java:27)
-	at com.localhost.playgroundInfo.CategoriesSteps.getCategoryByID(CategoriesSteps.java:78)
-	at com.localhost.playgroundInfo.CategoriesCRUDTest.test004(CategoriesCRUDTest.java:60)
-</error>
-    <system-out><![CDATA[Request method:	DELETE
-Request URI:	http://localhost:3030/categories/abcat001000149802
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	categoryID=abcat001000149802
-Multiparts:		<none>
-Headers:		Accept=*/*
-Cookies:		<none>
-Body:			<none>
-Request method:	GET
-Request URI:	http://localhost:3030/categories/%7BcategoryID%7D
-Proxy:			<none>
-Request params:	<none>
-Query params:	<none>
-Form params:	<none>
-Path params:	productID=abcat001000149802
-Multiparts:		<none>
-Headers:		Accept=*/*
-Cookies:		<none>
-Body:			<none>
-]]></system-out>
-    <system-err><![CDATA[4085 [main] INFO net.serenitybdd.core.Serenity - 
-        __    _____ _____ ____ _____   ____   _    ____  ____  _____ ____  
-  _     \ \  |_   _| ____/ ___|_   _| |  _ \ / \  / ___|/ ___|| ____|  _ \ 
- (_)_____| |   | | |  _| \___ \ | |   | |_) / _ \ \___ \\___ \|  _| | | | |
-  _|_____| |   | | | |___ ___) || |   |  __/ ___ \ ___) |___) | |___| |_| |
- (_)     | |   |_| |_____|____/ |_|   |_| /_/   \_\____/|____/|_____|____/ 
-        /_/                                                                
-
-TEST PASSED: Update the Category information
-----------------------------------------------------------------------------
-4085 [main] INFO net.serenitybdd.core.Serenity - 
- _____ _____ ____ _____   ____ _____  _    ____ _____ _____ ____  
-|_   _| ____/ ___|_   _| / ___|_   _|/ \  |  _ \_   _| ____|  _ \ 
-  | | |  _| \___ \ | |   \___ \ | | / _ \ | |_) || | |  _| | | | |
-  | | | |___ ___) || |    ___) || |/ ___ \|  _ < | | | |___| |_| |
-  |_| |_____|____/ |_|   |____/ |_/_/   \_\_| \_\|_| |_____|____/ 
-                                                                  
-
-TEST STARTED: test004
--------------------------------------------------------------------
-4085 [main] INFO net.serenitybdd.core.Serenity - TEST NUMBER: 4
-]]></system-err>
-  </testcase>
+  <testcase name="test001" classname="com.localhost.playgroundInfo.CategoriesCRUDTest" time="3.348"/>
+  <testcase name="test002" classname="com.localhost.playgroundInfo.CategoriesCRUDTest" time="0.054"/>
+  <testcase name="test003" classname="com.localhost.playgroundInfo.CategoriesCRUDTest" time="0.062"/>
+  <testcase name="test004" classname="com.localhost.playgroundInfo.CategoriesCRUDTest" time="0.087"/>
 </testsuite>

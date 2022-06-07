@@ -73,7 +73,7 @@ public class CategoriesSteps {
     @Step("Getting Category with ID {0}")
     public ValidatableResponse getCategoryByID(String categoryID){
         return SerenityRest.given().log().all()
-                .pathParam("productID", categoryID)
+                .pathParam("categoryID", categoryID)
                 .when()
                 .get(EndPoints.GET_SINGLE_CATEGORIES_BY_ID)
                 .then();

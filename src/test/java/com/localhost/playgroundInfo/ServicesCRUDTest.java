@@ -9,6 +9,7 @@ import net.thucydides.core.annotations.Title;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.core.annotation.Order;
 
 import java.util.HashMap;
 
@@ -27,6 +28,7 @@ public class ServicesCRUDTest extends TestBase {
 
     @Title("This will create a New Service")
     @Test
+    @Order(1)
     public void test001() {
         ValidatableResponse response = servicesSteps.createService(name);
         response.log().all().statusCode(201);
@@ -34,16 +36,18 @@ public class ServicesCRUDTest extends TestBase {
         System.out.println(serviceID);
     }
 
-    @Title("Verify if the Product was added to the application")
+    @Title("Verify if the Services was added to the application")
     @Test
+    @Order(2)
     public void test002() {
         HashMap<String, ?> storeMap = servicesSteps.getServiceInfoByName(serviceID);
         Assert.assertThat(storeMap, hasValue(name));
         System.out.println(storeMap);
     }
 
-    @Title("Update the product information")
+    @Title("Update the Services information")
     @Test
+    @Order(3)
     public void test003() {
         name = name + "_updated";
         HashMap<Object, Object> servicesData = new HashMap<>();
@@ -53,8 +57,9 @@ public class ServicesCRUDTest extends TestBase {
         System.out.println(productList);
     }
 
-    @Title("Delete the product by ID")
+    @Title("Delete the Services by ID")
     @Test
+    @Order(4)
     public void test004() {
         servicesSteps.deleteService(serviceID).statusCode(200);
         servicesSteps.getServiceByID(serviceID).statusCode(404);

@@ -12,6 +12,7 @@ import net.thucydides.core.annotations.Title;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.core.annotation.Order;
 
 import java.util.HashMap;
 
@@ -28,6 +29,7 @@ public class CategoriesCRUDTest extends TestBase {
 
     @Title("This will create a New Category")
     @Test
+    @Order(1)
     public void test001() {
         ValidatableResponse response = categoriesSteps.createCategory(name, id);
         response.log().all().statusCode(201);
@@ -37,6 +39,7 @@ public class CategoriesCRUDTest extends TestBase {
 
     @Title("Verify if the Category was added to the application")
     @Test
+    @Order(2)
     public void test002() {
         HashMap<String, ?> categoryMap = categoriesSteps.getCategoryInfoByName(categoryID);
         Assert.assertThat(categoryMap, hasValue(name));
@@ -45,6 +48,7 @@ public class CategoriesCRUDTest extends TestBase {
 
     @Title("Update the Category information")
     @Test
+    @Order(3)
     public void test003() {
         name = name + "_updated";
         categoriesSteps.updatingCategory(categoryID,name, id);
@@ -53,8 +57,9 @@ public class CategoriesCRUDTest extends TestBase {
         System.out.println(productList);
     }
 
-    @Title("Delete the product by ID")
+    @Title("Delete the Category by ID")
     @Test
+    @Order(4)
     public void test004() {
         categoriesSteps.deleteCategory(categoryID).statusCode(200);
         categoriesSteps.getCategoryByID(categoryID).statusCode(404);

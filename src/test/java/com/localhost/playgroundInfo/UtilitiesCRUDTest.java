@@ -11,6 +11,7 @@ import net.thucydides.core.annotations.Title;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.core.annotation.Order;
 
 import java.util.HashMap;
 
@@ -23,6 +24,7 @@ public class UtilitiesCRUDTest extends TestBase {
 
     @Title("Get the version of Application")
     @Test
+    @Order(1)
     public void getVersion() {
         ValidatableResponse response = utilitiesSteps.gettingVersion();
         response.log().all().statusCode(200);
@@ -30,6 +32,7 @@ public class UtilitiesCRUDTest extends TestBase {
 
     @Title("Get the Health check of Application")
     @Test
+    @Order(2)
     public void getHealthCheck() {
         ValidatableResponse response = utilitiesSteps.gettingHealthCheck();
         response.log().all().statusCode(200);

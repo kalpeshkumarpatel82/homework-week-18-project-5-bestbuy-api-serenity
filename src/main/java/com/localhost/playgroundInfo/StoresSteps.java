@@ -16,16 +16,16 @@ public class StoresSteps {
 
     @Step("Creating Products with name : {0}, type: {1}, address: {2}, address2: {3}, city: {4}, state: {5}, zip: {6}, lat: {7}, lng: {8}, hours: {9}, servicesDate: {10}")
     public ValidatableResponse createStore(String name,
-                                             String type,
-                                             String address,
-                                             String address2,
-                                             String city,
-                                             String state,
-                                             String zip,
-                                             int lat,
-                                             int lng,
-                                             String hours,
-                                             HashMap<Object, Object> servicesData) {
+                                           String type,
+                                           String address,
+                                           String address2,
+                                           String city,
+                                           String state,
+                                           String zip,
+                                           int lat,
+                                           int lng,
+                                           String hours,
+                                           HashMap<Object, Object> servicesData) {
         StoresPojo storesPojo = new StoresPojo();
         storesPojo.setName(name);
         storesPojo.setType(type);
@@ -59,6 +59,17 @@ public class StoresSteps {
         return storeMap;
     }
 
+    @Step("Getting All the Stores")
+    public ValidatableResponse getAllStores() {
+        return SerenityRest.given().log().all()
+                .when()
+                .get(EndPoints.GET_ALL_STORES)
+                .then()
+                .statusCode(200)
+                .log().all();
+
+    }
+
     @Step("Creating Products with name : {0}, type: {1}, address: {2}, address2: {3}, city: {4}, state: {5}, zip: {6}, lat: {7}, lng: {8}, hours: {9}, servicesDate: {10}")
     public ValidatableResponse updateStore(int storeID,
                                            String name,
@@ -88,14 +99,14 @@ public class StoresSteps {
         return SerenityRest.given().log().all()
                 .contentType(ContentType.JSON)
                 .body(storesPojo)
-                .pathParam("storeID",storeID)
+                .pathParam("storeID", storeID)
                 .when()
                 .patch(EndPoints.UPDATE_SINGLE_STORES_BY_ID)
                 .then();
     }
 
     @Step("Deleting Store with ID {0}")
-    public ValidatableResponse deleteStore(int storeID){
+    public ValidatableResponse deleteStore(int storeID) {
         return SerenityRest.given().log().all()
                 .pathParam("storeID", storeID)
                 .when()
@@ -104,7 +115,7 @@ public class StoresSteps {
     }
 
     @Step("Getting Store with ID {0}")
-    public ValidatableResponse getStoreByID(int storeID){
+    public ValidatableResponse getStoreByID(int storeID) {
         return SerenityRest.given().log().all()
                 .pathParam("storeID", storeID)
                 .when()
